@@ -1,0 +1,550 @@
+{
+  "zones": [
+    {
+      "id": "zone-001",
+      "name": "Bruxelles Centre",
+      "communes": ["Bruxelles-Ville", "Ixelles", "Saint-Gilles", "Etterbeek"],
+      "maxDeliveryMinutes": 30,
+      "isActive": true
+    },
+    {
+      "id": "zone-002",
+      "name": "Bruxelles Nord",
+      "communes": ["Schaerbeek", "Evere", "Saint-Josse-ten-Noode", "Woluwe-Saint-Lambert"],
+      "maxDeliveryMinutes": 40,
+      "isActive": true
+    },
+    {
+      "id": "zone-003",
+      "name": "Bruxelles Sud",
+      "communes": ["Forest", "Uccle", "Anderlecht", "Molenbeek-Saint-Jean"],
+      "maxDeliveryMinutes": 45,
+      "isActive": true
+    }
+  ],
+
+  "categories": [
+    { "id": "cat-01", "name": "Fruits", "icon": "🍎", "sortOrder": 1, "isActive": true },
+    { "id": "cat-02", "name": "Légumes", "icon": "🥦", "sortOrder": 2, "isActive": true },
+    { "id": "cat-03", "name": "Boulangerie", "icon": "🥖", "sortOrder": 3, "isActive": true },
+    { "id": "cat-04", "name": "Produits laitiers", "icon": "🧀", "sortOrder": 4, "isActive": true },
+    { "id": "cat-05", "name": "Viandes", "icon": "🥩", "sortOrder": 5, "isActive": true },
+    { "id": "cat-06", "name": "Plats préparés", "icon": "🍲", "sortOrder": 6, "isActive": true },
+    { "id": "cat-07", "name": "Boissons", "icon": "🥤", "sortOrder": 7, "isActive": true },
+    { "id": "cat-08", "name": "Épicerie", "icon": "🛒", "sortOrder": 8, "isActive": true }
+  ],
+
+  "stores": [
+    {
+      "id": "store-001",
+      "name": "Delhaize Toison d'Or",
+      "brand": "Delhaize",
+      "address": "Avenue de la Toison d'Or 17",
+      "postalCode": "1050",
+      "city": "Bruxelles",
+      "commune": "Ixelles",
+      "latitude": 50.8366,
+      "longitude": 4.3580,
+      "zoneId": "zone-001",
+      "isActive": true
+    },
+    {
+      "id": "store-002",
+      "name": "Colruyt Schaerbeek",
+      "brand": "Colruyt",
+      "address": "Rue Royale Sainte-Marie 90",
+      "postalCode": "1030",
+      "city": "Bruxelles",
+      "commune": "Schaerbeek",
+      "latitude": 50.8600,
+      "longitude": 4.3700,
+      "zoneId": "zone-002",
+      "isActive": true
+    },
+    {
+      "id": "store-003",
+      "name": "Carrefour Market Louise",
+      "brand": "Carrefour",
+      "address": "Avenue Louise 65",
+      "postalCode": "1050",
+      "city": "Bruxelles",
+      "commune": "Ixelles",
+      "latitude": 50.8310,
+      "longitude": 4.3560,
+      "zoneId": "zone-001",
+      "isActive": true
+    },
+    {
+      "id": "store-004",
+      "name": "Proxy Delhaize Forest",
+      "brand": "Delhaize",
+      "address": "Chaussée de Bruxelles 212",
+      "postalCode": "1190",
+      "city": "Bruxelles",
+      "commune": "Forest",
+      "latitude": 50.8100,
+      "longitude": 4.3200,
+      "zoneId": "zone-003",
+      "isActive": true
+    }
+  ],
+
+  "products": [
+    {
+      "id": "prod-001",
+      "categoryId": "cat-01",
+      "name": "Barquette de fraises",
+      "description": "Fraises belges 500g - DLC demain",
+      "image": "assets/images/600x600_(1).png",
+      "unit": "500 g",
+      "originalPrice": 4.50,
+      "discountedPrice": 2.25,
+      "discountPercent": -50,
+      "tag": "LOCAL",
+      "tagColor": "#0db14b",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 8,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-002",
+      "categoryId": "cat-01",
+      "name": "Bananes bio",
+      "description": "Bananes biologiques 1kg - DLC après-demain",
+      "image": "assets/images/600x600_(31).png",
+      "unit": "1 kg",
+      "originalPrice": 2.99,
+      "discountedPrice": 1.49,
+      "discountPercent": -50,
+      "tag": "BIO",
+      "tagColor": "#0db14b",
+      "storeId": "store-002",
+      "storeName": "Colruyt Schaerbeek",
+      "quantity": 15,
+      "expirationDate": "2026-04-15"
+    },
+    {
+      "id": "prod-003",
+      "categoryId": "cat-02",
+      "name": "Carottes lavées",
+      "description": "Carottes belges 500g - DLC demain",
+      "image": "assets/images/600x600_(30).png",
+      "unit": "500 g",
+      "originalPrice": 1.89,
+      "discountedPrice": 0.95,
+      "discountPercent": -50,
+      "tag": "",
+      "tagColor": "",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 20,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-004",
+      "categoryId": "cat-02",
+      "name": "Brocoli",
+      "description": "Brocoli frais 400g - DLC demain",
+      "image": "assets/images/600x600_(34).png",
+      "unit": "400 g",
+      "originalPrice": 2.49,
+      "discountedPrice": 1.25,
+      "discountPercent": -50,
+      "tag": "VEGGIE",
+      "tagColor": "#0db14b",
+      "storeId": "store-003",
+      "storeName": "Carrefour Market Louise",
+      "quantity": 12,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-005",
+      "categoryId": "cat-03",
+      "name": "Pain complet artisanal",
+      "description": "Pain complet 800g - Cuit ce matin",
+      "image": "assets/images/600x600_(36).png",
+      "unit": "800 g",
+      "originalPrice": 3.80,
+      "discountedPrice": 1.90,
+      "discountPercent": -50,
+      "tag": "ARTISANAL",
+      "tagColor": "#ffc709",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 5,
+      "expirationDate": "2026-04-13"
+    },
+    {
+      "id": "prod-006",
+      "categoryId": "cat-03",
+      "name": "Croissants au beurre x4",
+      "description": "Croissants pur beurre - DLC aujourd'hui",
+      "image": "assets/images/600x600_(38).png",
+      "unit": "4 pcs",
+      "originalPrice": 3.60,
+      "discountedPrice": 1.80,
+      "discountPercent": -50,
+      "tag": "DERNIER JOUR",
+      "tagColor": "#fc5230",
+      "storeId": "store-004",
+      "storeName": "Proxy Delhaize Forest",
+      "quantity": 3,
+      "expirationDate": "2026-04-13"
+    },
+    {
+      "id": "prod-007",
+      "categoryId": "cat-04",
+      "name": "Fromage Brie Président 300g",
+      "description": "Brie 60% MG - DLC dans 2 jours",
+      "image": "assets/images/600x600_(39).png",
+      "unit": "300 g",
+      "originalPrice": 5.49,
+      "discountedPrice": 2.75,
+      "discountPercent": -50,
+      "tag": "",
+      "tagColor": "",
+      "storeId": "store-002",
+      "storeName": "Colruyt Schaerbeek",
+      "quantity": 6,
+      "expirationDate": "2026-04-15"
+    },
+    {
+      "id": "prod-008",
+      "categoryId": "cat-04",
+      "name": "Yaourt grec nature x6",
+      "description": "Pack de 6 yaourts grecs 150g - DLC demain",
+      "image": "assets/images/0b4decdd4e580de061349c60bcec.png",
+      "unit": "6 x 150 g",
+      "originalPrice": 4.20,
+      "discountedPrice": 2.10,
+      "discountPercent": -50,
+      "tag": "PROMO",
+      "tagColor": "#fc5230",
+      "storeId": "store-003",
+      "storeName": "Carrefour Market Louise",
+      "quantity": 10,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-009",
+      "categoryId": "cat-05",
+      "name": "Filet de poulet fermier",
+      "description": "Poulet fermier belge 500g - DLC demain",
+      "image": "assets/images/0cb93a2b51fbb1e6b65c0d0cc83f.png",
+      "unit": "500 g",
+      "originalPrice": 7.99,
+      "discountedPrice": 3.99,
+      "discountPercent": -50,
+      "tag": "FERMIER",
+      "tagColor": "#ffc709",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 4,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-010",
+      "categoryId": "cat-05",
+      "name": "Aile de dinde",
+      "description": "Aile de dinde 500g - DLC dans 2 jours",
+      "image": "assets/images/08f63f6f03fd06e1cc4556201d29.png",
+      "unit": "500 g",
+      "originalPrice": 5.99,
+      "discountedPrice": 2.99,
+      "discountPercent": -50,
+      "tag": "",
+      "tagColor": "",
+      "storeId": "store-004",
+      "storeName": "Proxy Delhaize Forest",
+      "quantity": 7,
+      "expirationDate": "2026-04-15"
+    },
+    {
+      "id": "prod-011",
+      "categoryId": "cat-06",
+      "name": "Salade César",
+      "description": "Salade César au poulet 350g - DLC aujourd'hui",
+      "image": "assets/images/253bf999528a78fce1bf44f84f86.png",
+      "unit": "350 g",
+      "originalPrice": 4.99,
+      "discountedPrice": 2.49,
+      "discountPercent": -50,
+      "tag": "DERNIER JOUR",
+      "tagColor": "#fc5230",
+      "storeId": "store-003",
+      "storeName": "Carrefour Market Louise",
+      "quantity": 2,
+      "expirationDate": "2026-04-13"
+    },
+    {
+      "id": "prod-012",
+      "categoryId": "cat-06",
+      "name": "Soupe de légumes maison",
+      "description": "Soupe de saison 1L - DLC demain",
+      "image": "assets/images/327a70bb676f88670ccbe6961f97.png",
+      "unit": "1 L",
+      "originalPrice": 3.99,
+      "discountedPrice": 1.99,
+      "discountPercent": -50,
+      "tag": "FAIT MAISON",
+      "tagColor": "#0db14b",
+      "storeId": "store-002",
+      "storeName": "Colruyt Schaerbeek",
+      "quantity": 9,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-013",
+      "categoryId": "cat-07",
+      "name": "Jus d'orange pressé 1L",
+      "description": "Jus frais pressé - DLC demain",
+      "image": "assets/images/42e3412aa5be158c9c071023be83.png",
+      "unit": "1 L",
+      "originalPrice": 3.49,
+      "discountedPrice": 1.75,
+      "discountPercent": -50,
+      "tag": "FRAIS",
+      "tagColor": "#ffc709",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 11,
+      "expirationDate": "2026-04-14"
+    },
+    {
+      "id": "prod-014",
+      "categoryId": "cat-07",
+      "name": "Limonade artisanale bio",
+      "description": "Limonade bio belge 330ml - DLC dans 5 jours",
+      "image": "assets/images/51263bbf9f18caa90c348d5xd141.png",
+      "unit": "330 ml",
+      "originalPrice": 2.50,
+      "discountedPrice": 1.25,
+      "discountPercent": -50,
+      "tag": "BIO",
+      "tagColor": "#0db14b",
+      "storeId": "store-004",
+      "storeName": "Proxy Delhaize Forest",
+      "quantity": 18,
+      "expirationDate": "2026-04-18"
+    },
+    {
+      "id": "prod-015",
+      "categoryId": "cat-08",
+      "name": "Pâtes complètes Barilla 500g",
+      "description": "Spaghetti complètes - DLC dans 1 mois",
+      "image": "assets/images/3f234f4wrgeg.png",
+      "unit": "500 g",
+      "originalPrice": 2.19,
+      "discountedPrice": 1.09,
+      "discountPercent": -50,
+      "tag": "",
+      "tagColor": "",
+      "storeId": "store-002",
+      "storeName": "Colruyt Schaerbeek",
+      "quantity": 25,
+      "expirationDate": "2026-05-13"
+    },
+    {
+      "id": "prod-016",
+      "categoryId": "cat-08",
+      "name": "Huile d'olive extra vierge",
+      "description": "Huile d'olive italienne 750ml - DLC dans 3 mois",
+      "image": "assets/images/424r322r_(1).png",
+      "unit": "750 ml",
+      "originalPrice": 8.99,
+      "discountedPrice": 4.49,
+      "discountPercent": -50,
+      "tag": "IMPORT",
+      "tagColor": "#77dde7",
+      "storeId": "store-001",
+      "storeName": "Delhaize Toison d'Or",
+      "quantity": 6,
+      "expirationDate": "2026-07-13"
+    }
+  ],
+
+  "surpriseBoxPlans": [
+    {
+      "id": "box-001",
+      "name": "Découverte",
+      "description": "1 colis surprise par mois avec des produits variés anti-gaspi",
+      "monthlyPrice": 30.00,
+      "deliveriesPerMonth": 1,
+      "estimatedBoxValue": 60.00,
+      "isActive": true
+    },
+    {
+      "id": "box-002",
+      "name": "Classique",
+      "description": "3 colis surprise par mois - Le meilleur rapport qualité/prix",
+      "monthlyPrice": 50.00,
+      "deliveriesPerMonth": 3,
+      "estimatedBoxValue": 120.00,
+      "isActive": true
+    },
+    {
+      "id": "box-003",
+      "name": "Premium",
+      "description": "5 colis surprise par mois - Pour les familles et les gourmands",
+      "monthlyPrice": 80.00,
+      "deliveriesPerMonth": 5,
+      "estimatedBoxValue": 200.00,
+      "isActive": true
+    }
+  ],
+
+  "subscriptionPlans": [
+    {
+      "id": "sub-001",
+      "name": "Mensuel",
+      "price": 29.99,
+      "durationMonths": 1,
+      "description": "Livraison hebdomadaire de produits anti-gaspi"
+    },
+    {
+      "id": "sub-002",
+      "name": "Trimestriel",
+      "price": 79.99,
+      "durationMonths": 3,
+      "description": "3 mois d'engagement - Économisez 10%"
+    },
+    {
+      "id": "sub-003",
+      "name": "Semestriel",
+      "price": 149.99,
+      "durationMonths": 6,
+      "description": "6 mois d'engagement - Économisez 17%"
+    },
+    {
+      "id": "sub-004",
+      "name": "Annuel",
+      "price": 269.99,
+      "durationMonths": 12,
+      "description": "12 mois d'engagement - Économisez 25%"
+    }
+  ],
+
+  "fakeOrders": [
+    {
+      "id": "order-001",
+      "orderNumber": "FF-2026-00142",
+      "status": "Delivered",
+      "subTotal": 8.44,
+      "deliveryFee": 2.50,
+      "totalAmount": 10.94,
+      "createdAt": "2026-04-10T14:30:00",
+      "deliveredAt": "2026-04-10T17:45:00",
+      "items": [
+        { "productName": "Barquette de fraises", "quantity": 2, "unitPrice": 2.25, "lineTotal": 4.50, "storeName": "Delhaize Toison d'Or" },
+        { "productName": "Brocoli", "quantity": 1, "unitPrice": 1.25, "lineTotal": 1.25, "storeName": "Carrefour Market Louise" },
+        { "productName": "Pain complet artisanal", "quantity": 1, "unitPrice": 1.90, "lineTotal": 1.90, "storeName": "Delhaize Toison d'Or" }
+      ],
+      "rating": 5,
+      "comment": "Super frais, livraison rapide !"
+    },
+    {
+      "id": "order-002",
+      "orderNumber": "FF-2026-00156",
+      "status": "InDelivery",
+      "subTotal": 6.73,
+      "deliveryFee": 2.50,
+      "totalAmount": 9.23,
+      "createdAt": "2026-04-13T11:20:00",
+      "deliveredAt": null,
+      "items": [
+        { "productName": "Filet de poulet fermier", "quantity": 1, "unitPrice": 3.99, "lineTotal": 3.99, "storeName": "Delhaize Toison d'Or" },
+        { "productName": "Fromage Brie Président", "quantity": 1, "unitPrice": 2.75, "lineTotal": 2.75, "storeName": "Colruyt Schaerbeek" }
+      ],
+      "rating": null,
+      "comment": null
+    },
+    {
+      "id": "order-003",
+      "orderNumber": "FF-2026-00163",
+      "status": "Pending",
+      "subTotal": 5.23,
+      "deliveryFee": 2.50,
+      "totalAmount": 7.73,
+      "createdAt": "2026-04-13T16:00:00",
+      "deliveredAt": null,
+      "items": [
+        { "productName": "Salade César", "quantity": 1, "unitPrice": 2.49, "lineTotal": 2.49, "storeName": "Carrefour Market Louise" },
+        { "productName": "Jus d'orange pressé 1L", "quantity": 1, "unitPrice": 1.75, "lineTotal": 1.75, "storeName": "Delhaize Toison d'Or" },
+        { "productName": "Carottes lavées", "quantity": 1, "unitPrice": 0.95, "lineTotal": 0.95, "storeName": "Delhaize Toison d'Or" }
+      ],
+      "rating": null,
+      "comment": null
+    }
+  ],
+
+  "fakeUser": {
+    "id": "user-001",
+    "email": "demo@foodfirst.be",
+    "firstName": "Sophie",
+    "lastName": "Dupont",
+    "phone": "+32 470 12 34 56",
+    "role": "Client",
+    "addresses": [
+      {
+        "id": "addr-001",
+        "street": "Rue de la Loi",
+        "number": "42",
+        "postalCode": "1040",
+        "city": "Bruxelles",
+        "commune": "Etterbeek",
+        "latitude": 50.8420,
+        "longitude": 4.3810,
+        "isDefault": true,
+        "label": "Maison"
+      },
+      {
+        "id": "addr-002",
+        "street": "Avenue Louise",
+        "number": "120",
+        "postalCode": "1050",
+        "city": "Bruxelles",
+        "commune": "Ixelles",
+        "latitude": 50.8300,
+        "longitude": 4.3570,
+        "isDefault": false,
+        "label": "Bureau"
+      }
+    ]
+  },
+
+  "notifications": [
+    {
+      "id": "notif-001",
+      "title": "Nouveaux produits disponibles !",
+      "body": "12 nouveaux produits anti-gaspi viennent d'être ajoutés près de chez vous.",
+      "type": "ProductAvailable",
+      "isRead": false,
+      "sentAt": "2026-04-13T09:00:00"
+    },
+    {
+      "id": "notif-002",
+      "title": "Votre commande est en livraison",
+      "body": "FF-2026-00156 est en route ! Estimée dans 25 minutes.",
+      "type": "DeliveryUpdate",
+      "isRead": false,
+      "sentAt": "2026-04-13T16:30:00"
+    },
+    {
+      "id": "notif-003",
+      "title": "Deadline 17h approche !",
+      "body": "Passez votre commande avant 17h pour une livraison aujourd'hui.",
+      "type": "Promotion",
+      "isRead": true,
+      "sentAt": "2026-04-13T16:00:00"
+    },
+    {
+      "id": "notif-004",
+      "title": "Merci pour votre avis !",
+      "body": "Votre évaluation de la commande FF-2026-00142 a été enregistrée.",
+      "type": "OrderUpdate",
+      "isRead": true,
+      "sentAt": "2026-04-10T18:00:00"
+    }
+  ]
+}
