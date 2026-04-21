@@ -97,7 +97,7 @@ class _WidgetSingleOptions2WidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Add to Favourites',
+                                'Ajouter aux favoris',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -161,7 +161,7 @@ class _WidgetSingleOptions2WidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Share',
+                                'Partager',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -225,7 +225,7 @@ class _WidgetSingleOptions2WidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Report',
+                                'Signaler',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -278,7 +278,7 @@ class _WidgetSingleOptions2WidgetState
                   child: Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
-                      'Cancel',
+                      'Annuler',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)

@@ -3,74 +3,74 @@ import 'flutter_flow/flutter_flow_util.dart';
 
 abstract class FFAppConstants {
   static const List<String> countries = [
-    'New York City',
-    'San Francisco',
-    'Miami',
-    'Las Vegas',
-    'Denver',
-    'Other'
+    'Bruxelles-Centre',
+    'Schaerbeek',
+    'Ixelles',
+    'Uccle',
+    'Anderlecht',
+    'Autre'
   ];
-  static const List<String> Genders = ['Male', 'Female'];
+  static const List<String> Genders = ['Homme', 'Femme'];
   static const List<String> LanguagesFilterList = [
-    'English',
-    'German',
-    'Arabic',
-    'Italian',
-    'French',
-    'Spanish'
+    'Français',
+    'Néerlandais',
+    'Anglais',
+    'Allemand',
+    'Arabe',
+    'Espagnol'
   ];
   static const List<String> SortByFilter = [
-    'Popularity',
-    'Rating',
-    'Price: Low to High',
-    'Price: High to Low'
+    'Popularité',
+    'Note',
+    'Prix : croissant',
+    'Prix : décroissant'
   ];
   static const List<String> HomeCategories = [
-    'Sales',
-    'Fast Delivery',
-    'Popular',
-    'New',
-    'Favorites'
+    'Promos',
+    'Livraison rapide',
+    'Populaire',
+    'Nouveau',
+    'Favoris'
   ];
   static const List<String> TipsList = [
-    'Not now',
-    '\$1.00',
-    '\$2.00',
-    '\$3.00',
-    '\$5.00'
+    'Pas maintenant',
+    '1,00 €',
+    '2,00 €',
+    '3,00 €',
+    '5,00 €'
   ];
   static const List<String> RatingFilter = [
-    'Any',
-    'From 3',
-    'From 4',
-    'From 5'
+    'Tous',
+    'Dès 3',
+    'Dès 4',
+    'Dès 5'
   ];
   static const List<String> Country = [
-    'China',
-    'Turkey',
-    'USA',
-    'Morocco',
-    'Poland',
-    'Great Britain',
+    'Belgique',
     'France',
-    'Columbia',
-    'Mexico',
-    'New Zealand',
-    'Peru',
-    'Brazil'
+    'Pays-Bas',
+    'Allemagne',
+    'Luxembourg',
+    'Espagne',
+    'Italie',
+    'Portugal',
+    'Maroc',
+    'Turquie',
+    'Pologne',
+    'Royaume-Uni'
   ];
   static const List<String> BrandFilter = [
-    'Hortex',
-    'Agama',
-    'MAAG',
-    'Nivea',
-    'Rexona',
-    'Pura Vida',
-    'Botanica',
-    'Fanta',
-    'Sprite',
-    'Genie',
-    'Amoris'
+    'Delhaize',
+    'Colruyt',
+    'Carrefour',
+    'Aldi',
+    'Lidl',
+    'Bio-Planet',
+    'Proxy Delhaize',
+    'Match',
+    'Intermarché',
+    'Spar',
+    'Louis Delhaize'
   ];
-  static const List<String> PackingList = ['Weight', 'Packaged', 'Piece'];
+  static const List<String> PackingList = ['Au poids', 'Emballé', 'À la pièce'];
 }

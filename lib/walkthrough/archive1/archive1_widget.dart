@@ -53,7 +53,7 @@ class _Archive1WidgetState extends State<Archive1Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 12.0),
               child: Text(
-                'Customize your search by applying advanced filters.',
+                'Personnalisez votre recherche avec des filtres avancés.',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       font: GoogleFonts.inter(
                         fontWeight:

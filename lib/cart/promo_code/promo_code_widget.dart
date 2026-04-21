@@ -64,7 +64,7 @@ class _PromoCodeWidgetState extends State<PromoCodeWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Promo code',
+                    'Code promo',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)
@@ -95,7 +95,7 @@ class _PromoCodeWidgetState extends State<PromoCodeWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           isDense: true,
-                          hintText: 'Emter your email',
+                          hintText: 'Entrez le code promo',
                           hintStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
@@ -180,7 +180,7 @@ class _PromoCodeWidgetState extends State<PromoCodeWidget> {
                       onPressed: () async {
                         Navigator.pop(context);
                       },
-                      text: 'Activate',
+                      text: 'Activer',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 52.0,

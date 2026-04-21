@@ -102,7 +102,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Forgot Password',
+                          'Mot de passe oublie',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -127,7 +127,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Text(
-                            'Enter your email in the lower field. We will send you a new password by email',
+                            'Entrez votre e-mail ci-dessous. Nous vous enverrons un nouveau mot de passe par e-mail',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -155,7 +155,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Email',
+                            'E-mail',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -185,7 +185,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your email',
+                                hintText: 'Entrez votre e-mail',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -276,7 +276,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       onPressed: () async {
                         context.pushNamed(ForgotPassword2Widget.routeName);
                       },
-                      text: 'Reset password',
+                      text: 'Reinitialiser le mot de passe',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 52.0,

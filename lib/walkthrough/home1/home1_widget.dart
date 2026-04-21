@@ -53,7 +53,7 @@ class _Home1WidgetState extends State<Home1Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 10.0),
               child: Text(
-                'Product catalog with 200 000 items',
+                'Catalogue de produits avec 200 000 articles',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       font: GoogleFonts.inter(
                         fontWeight:

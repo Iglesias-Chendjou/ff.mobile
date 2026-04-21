@@ -198,7 +198,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Get Started',
+                        'Commencer',
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(
                                   font: GoogleFonts.inter(
@@ -226,7 +226,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Text(
-                          'Welcome! Let\'s dive in your account.',
+                          'Bienvenue ! Connectez-vous à votre compte.',
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     font: GoogleFonts.inter(
@@ -285,7 +285,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
-                                  'Sign in with Google',
+                                  'Se connecter avec Google',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
@@ -352,7 +352,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
-                                  'Sign in with Facebook',
+                                  'Se connecter avec Facebook',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
@@ -419,7 +419,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
-                                  'Sign in with X',
+                                  'Se connecter avec X',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
@@ -486,7 +486,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 28.0, 0.0),
                                 child: Text(
-                                  'Sign in with Apple',
+                                  'Se connecter avec Apple',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
@@ -524,7 +524,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         onPressed: () async {
                           context.pushNamed(LoginEmailWidget.routeName);
                         },
-                        text: 'Sign in with email',
+                        text: 'Se connecter par e-mail',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
@@ -567,7 +567,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Don\'t have an account? ',
+                      text: 'Pas encore de compte ? ',
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)
@@ -588,7 +588,7 @@ class _LoginWidgetState extends State<LoginWidget>
                           ),
                     ),
                     TextSpan(
-                      text: 'Sign Up',
+                      text: 'S\'inscrire',
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             font: GoogleFonts.inter(
                               fontWeight: FontWeight.w500,

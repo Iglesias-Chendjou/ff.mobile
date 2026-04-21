@@ -670,7 +670,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Vegetables &\nfruits',
+                                                  'Fruits &\nlégumes',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -737,7 +737,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Pasta, oil,\nspices',
+                                                  'Épicerie\nsalée',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -804,7 +804,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Nuts, seeds,\ndried fruits',
+                                                  'Fruits secs,\ngraines, noix',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -871,7 +871,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Juices, waters,\ndrinks',
+                                                  'Jus, eaux,\nboissons',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -938,7 +938,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Bread & \npastries',
+                                                  'Boulangerie &\npâtisseries',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -1005,7 +1005,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Fast food\nproducts',
+                                                  'Plats rapides\n& surgelés',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -1109,7 +1109,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'New products',
+                                      'Nouveaux produits',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
@@ -1144,7 +1144,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             .pushNamed(ArchiveWidget.routeName);
                                       },
                                       child: Text(
-                                        'See more',
+                                        'Voir plus',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -1255,7 +1255,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   85.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            '50% discount on the first order. ',
+                                            '50% de réduction sur la 1ère commande. ',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
@@ -1443,7 +1443,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'Home',
+                                      'Accueil',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -1503,7 +1503,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 2.0, 0.0, 0.0),
                                     child: Text(
-                                      'Catalog',
+                                      'Catalogue',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -1582,7 +1582,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'Orders',
+                                      'Commandes',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -1660,7 +1660,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Profile',
+                                        'Profil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(

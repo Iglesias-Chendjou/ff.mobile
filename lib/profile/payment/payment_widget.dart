@@ -68,7 +68,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
             ),
           ),
           title: Text(
-            'Payment',
+            'Paiement',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:

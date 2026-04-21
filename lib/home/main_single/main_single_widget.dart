@@ -96,10 +96,12 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                             .accent4,
                                         image: DecorationImage(
                                           fit: BoxFit.contain,
-                                          image: (valueOrDefault<String>(widget!.data?.image, 'assets/images/600x600_(1).png').startsWith('http')
-                                            ? Image.network(widget!.data!.image)
-                                            : Image.asset(valueOrDefault<String>(widget!.data?.image, 'assets/images/600x600_(1).png'))
-                                          ).image,
+                                          image: (() {
+                                            final imgPath = valueOrDefault<String>(widget!.data?.image, 'assets/images/600x600_(1).png');
+                                            if (imgPath.isEmpty) return Image.asset('assets/images/600x600_(1).png').image;
+                                            if (imgPath.startsWith('http')) return Image.network(imgPath).image;
+                                            return Image.asset(imgPath).image;
+                                          })(),
                                         ),
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(18.0),
@@ -187,7 +189,7 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       widget!.data?.tag1,
-                                                      'NO SUGAR',
+                                                      'SANS SUCRE',
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -374,7 +376,7 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 0.0, 0.0),
                                   child: Text(
-                                    'Product details',
+                                    'Détails du produit',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -404,7 +406,7 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 15.0, 0.0),
                                   child: Text(
-                                    'Potato, vegetable oil, whey powder, wheat flour, lactose (from milk), flavor enhancer (monosodium glutamate, sodium 5 ribonucleotide), hydrogenated vegetable oil (including soybean), glucose, natural, nature-identical and artificial flavors.',
+                                    'Pomme de terre, huile végétale, poudre de lactosérum, farine de blé, lactose (issu du lait), exhausteur de goût (glutamate monosodique, 5\u0027-ribonucléotide de sodium), huile végétale hydrogénée (dont soja), glucose, arômes naturels, identiques au naturel et artificiels.',
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -446,7 +448,7 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 0.0, 0.0),
                                   child: Text(
-                                    'Anything else?',
+                                    'Autre chose ?',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -843,7 +845,7 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              'Add to cart',
+                                              'Ajouter au panier',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium

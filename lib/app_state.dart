@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'core/api_service.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -51,11 +52,96 @@ class FFAppState extends ChangeNotifier {
               .toList() ??
           _CartList;
     });
+
+    // Clear stale cached products and load fresh from API
+    prefs.remove('ff_dataFruits');
+    await loadProductsFromApi();
   }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
+  }
+
+  // Map product names to local asset images
+  static const _productImages = <String, String>{
+    'Barquette de fraises': 'assets/images/600x600_(1).png',
+    'Bananes bio': 'assets/images/600x600_(31).png',
+    'Carottes lavées': 'assets/images/d7144865a2d02d253bcf345d294b.png',
+    'Brocoli frais': 'assets/images/6b05b3ed7a2c77848c3178e91a9d.png',
+    'Pommes Jonagold': 'assets/images/66ce9b0fbeca91ba2f9956920fcc.png',
+    'Salade César': 'assets/images/253bf999528a78fce1bf44f84f86.png',
+    'Pain de campagne': 'assets/images/75546d8cd3aaf2cd8d900a7fb1c2.png',
+    'Croissants au beurre x4': 'assets/images/8d187b48bea51e3c486c339d932e.png',
+    'Pâtes complètes 500g': 'assets/images/3f234f4wrgeg.png',
+    'Fromage Brie Président': 'assets/images/600x600_(39).png',
+    'Yaourt grec nature x6': 'assets/images/0b4decdd4e580de061349c60bcec.png',
+    'Yaourt nature bio': 'assets/images/f75393724b28a68eda2f69bab555.png',
+    'Filet de poulet fermier': 'assets/images/0cb93a2b51fbb1e6b65c0d0cc83f.png',
+    'Aile de dinde': 'assets/images/08f63f6f03fd06e1cc4556201d29.png',
+    'Soupe de légumes maison': 'assets/images/327a70bb676f88670ccbe6961f97.png',
+    "Jus d'orange pressé": 'assets/images/42e3412aa5be158c9c071023be83.png',
+    'Limonade artisanale bio': 'assets/images/51263bbf9f18caa90c348d5xd141.png',
+    "Huile d'olive extra vierge": 'assets/images/424r322r_(1).png',
+  };
+
+  static const _categoryColors = <String, Color>{
+    'Fruits & Légumes': Color(0xFF0DB14B),
+    'Boulangerie': Color(0xFFFFC709),
+    'Produits laitiers': Color(0xFF77DDE7),
+    'Viandes & Poissons': Color(0xFFFC5230),
+    'Épicerie': Color(0xFFFF9800),
+  };
+
+  /// Load products from the backend API and convert to DataStruct
+  Future<void> loadProductsFromApi() async {
+    try {
+      final api = ApiService();
+      final products = await api.fetchAvailableProducts();
+      if (products.isNotEmpty) {
+        // Deduplicate by product name (same product in multiple stores)
+        final seen = <String>{};
+        final unique = <Map<String, dynamic>>[];
+        for (final p in products) {
+          final name = p['name'] as String? ?? '';
+          if (seen.add(name)) unique.add(p);
+        }
+
+        _dataFruits = unique.map((p) {
+          final name = p['name'] as String? ?? '';
+          final originalPrice = (p['originalPrice'] as num?)?.toDouble() ?? 0.0;
+          final discountedPrice =
+              (p['discountedPrice'] as num?)?.toDouble() ?? 0.0;
+          final discount = originalPrice > 0
+              ? '-${((1 - discountedPrice / originalPrice) * 100).round()}%'
+              : '-50%';
+          final category = p['categoryName'] as String? ?? '';
+          return DataStruct(
+            title: name,
+            image: _productImages[name] ?? 'assets/images/600x600_(1).png',
+            priceOld: '${originalPrice.toStringAsFixed(2)} EUR',
+            priceNew: '${discountedPrice.toStringAsFixed(2)} EUR',
+            sale: discount,
+            tag1: category,
+            tag1Color: _categoryColors[category] ?? const Color(0xFF0DB14B),
+            description:
+                '${p['unit'] ?? ''} - ${p['storeName'] ?? ''}',
+            oldPrice: originalPrice,
+            newPrice: discountedPrice,
+            id: (p['storeInventoryId']?.hashCode ?? 0) % 100000,
+          );
+        }).toList();
+        prefs.setStringList(
+            'ff_dataFruits', _dataFruits.map((x) => x.serialize()).toList());
+        notifyListeners();
+        debugPrint(
+            'API: ${_dataFruits.length} produits charges depuis le backend');
+      } else {
+        debugPrint('API: aucun produit, utilisation des donnees locales');
+      }
+    } catch (e) {
+      debugPrint('API: erreur chargement produits, fallback local: $e');
+    }
   }
 
   late SharedPreferences prefs;
@@ -207,7 +293,7 @@ class FFAppState extends ChangeNotifier {
     _SelectedSilter2 = value;
   }
 
-  String _SelectedAvailabilityFilter = 'In the next 3 days';
+  String _SelectedAvailabilityFilter = 'Dans les 3 prochains jours';
   String get SelectedAvailabilityFilter => _SelectedAvailabilityFilter;
   set SelectedAvailabilityFilter(String value) {
     _SelectedAvailabilityFilter = value;
@@ -225,7 +311,7 @@ class FFAppState extends ChangeNotifier {
     _SelectedLanguageFilter = value;
   }
 
-  String _SelectedSortBy = 'Popularity';
+  String _SelectedSortBy = 'Popularité';
   String get SelectedSortBy => _SelectedSortBy;
   set SelectedSortBy(String value) {
     _SelectedSortBy = value;
@@ -237,24 +323,7 @@ class FFAppState extends ChangeNotifier {
     _SelectedCategoryHome = value;
   }
 
-  List<DataStruct> _dataFruits = [
-    DataStruct(title: 'Barquette de fraises', image: 'assets/images/600x600_(1).png', priceOld: '4.50 EUR', priceNew: '2.25 EUR', sale: '-50%', tag1: 'LOCAL', tag1Color: const Color(0xFF0DB14B), description: '500 g - Delhaize Toison d\'Or', oldPrice: 4.50, newPrice: 2.25, id: 1001),
-    DataStruct(title: 'Bananes bio', image: 'assets/images/600x600_(31).png', priceOld: '2.99 EUR', priceNew: '1.49 EUR', sale: '-50%', tag1: 'BIO', tag1Color: const Color(0xFF0DB14B), description: '1 kg - Colruyt Schaerbeek', oldPrice: 2.99, newPrice: 1.49, id: 1002),
-    DataStruct(title: 'Carottes lavées', image: 'assets/images/600x600_(30).png', priceOld: '1.89 EUR', priceNew: '0.95 EUR', sale: '-50%', tag1: '', tag1Color: null, description: '500 g - Delhaize Toison d\'Or', oldPrice: 1.89, newPrice: 0.95, id: 1003),
-    DataStruct(title: 'Brocoli frais', image: 'assets/images/600x600_(34).png', priceOld: '2.49 EUR', priceNew: '1.25 EUR', sale: '-50%', tag1: 'VEGGIE', tag1Color: const Color(0xFF0DB14B), description: '400 g - Carrefour Louise', oldPrice: 2.49, newPrice: 1.25, id: 1004),
-    DataStruct(title: 'Pain complet artisanal', image: 'assets/images/600x600_(36).png', priceOld: '3.80 EUR', priceNew: '1.90 EUR', sale: '-50%', tag1: 'ARTISANAL', tag1Color: const Color(0xFFFFC709), description: '800 g - Delhaize Toison d\'Or', oldPrice: 3.80, newPrice: 1.90, id: 1005),
-    DataStruct(title: 'Croissants au beurre x4', image: 'assets/images/600x600_(38).png', priceOld: '3.60 EUR', priceNew: '1.80 EUR', sale: '-50%', tag1: 'DERNIER JOUR', tag1Color: const Color(0xFFFC5230), description: '4 pcs - Proxy Delhaize Forest', oldPrice: 3.60, newPrice: 1.80, id: 1006),
-    DataStruct(title: 'Fromage Brie Président', image: 'assets/images/600x600_(39).png', priceOld: '5.49 EUR', priceNew: '2.75 EUR', sale: '-50%', tag1: '', tag1Color: null, description: '300 g - Colruyt Schaerbeek', oldPrice: 5.49, newPrice: 2.75, id: 1007),
-    DataStruct(title: 'Yaourt grec nature x6', image: 'assets/images/0b4decdd4e580de061349c60bcec.png', priceOld: '4.20 EUR', priceNew: '2.10 EUR', sale: '-50%', tag1: 'PROMO', tag1Color: const Color(0xFFFC5230), description: '6x150 g - Carrefour Louise', oldPrice: 4.20, newPrice: 2.10, id: 1008),
-    DataStruct(title: 'Filet de poulet fermier', image: 'assets/images/0cb93a2b51fbb1e6b65c0d0cc83f.png', priceOld: '7.99 EUR', priceNew: '3.99 EUR', sale: '-50%', tag1: 'FERMIER', tag1Color: const Color(0xFFFFC709), description: '500 g - Delhaize Toison d\'Or', oldPrice: 7.99, newPrice: 3.99, id: 1009),
-    DataStruct(title: 'Aile de dinde', image: 'assets/images/08f63f6f03fd06e1cc4556201d29.png', priceOld: '5.99 EUR', priceNew: '2.99 EUR', sale: '-50%', tag1: '', tag1Color: null, description: '500 g - Proxy Delhaize Forest', oldPrice: 5.99, newPrice: 2.99, id: 1010),
-    DataStruct(title: 'Salade César', image: 'assets/images/253bf999528a78fce1bf44f84f86.png', priceOld: '4.99 EUR', priceNew: '2.49 EUR', sale: '-50%', tag1: 'DERNIER JOUR', tag1Color: const Color(0xFFFC5230), description: '350 g - Carrefour Louise', oldPrice: 4.99, newPrice: 2.49, id: 1011),
-    DataStruct(title: 'Soupe de légumes maison', image: 'assets/images/327a70bb676f88670ccbe6961f97.png', priceOld: '3.99 EUR', priceNew: '1.99 EUR', sale: '-50%', tag1: 'FAIT MAISON', tag1Color: const Color(0xFF0DB14B), description: '1 L - Colruyt Schaerbeek', oldPrice: 3.99, newPrice: 1.99, id: 1012),
-    DataStruct(title: 'Jus d\'orange pressé', image: 'assets/images/42e3412aa5be158c9c071023be83.png', priceOld: '3.49 EUR', priceNew: '1.75 EUR', sale: '-50%', tag1: 'FRAIS', tag1Color: const Color(0xFFFFC709), description: '1 L - Delhaize Toison d\'Or', oldPrice: 3.49, newPrice: 1.75, id: 1013),
-    DataStruct(title: 'Limonade artisanale bio', image: 'assets/images/51263bbf9f18caa90c348d5xd141.png', priceOld: '2.50 EUR', priceNew: '1.25 EUR', sale: '-50%', tag1: 'BIO', tag1Color: const Color(0xFF0DB14B), description: '330 ml - Proxy Delhaize Forest', oldPrice: 2.50, newPrice: 1.25, id: 1014),
-    DataStruct(title: 'Pâtes complètes 500g', image: 'assets/images/3f234f4wrgeg.png', priceOld: '2.19 EUR', priceNew: '1.09 EUR', sale: '-50%', tag1: '', tag1Color: null, description: '500 g - Colruyt Schaerbeek', oldPrice: 2.19, newPrice: 1.09, id: 1015),
-    DataStruct(title: 'Huile d\'olive extra vierge', image: 'assets/images/424r322r_(1).png', priceOld: '8.99 EUR', priceNew: '4.49 EUR', sale: '-50%', tag1: 'IMPORT', tag1Color: const Color(0xFF77DDE7), description: '750 ml - Delhaize Toison d\'Or', oldPrice: 8.99, newPrice: 4.49, id: 1016),
-  ];
+  List<DataStruct> _dataFruits = [];
   List<DataStruct> get dataFruits => _dataFruits;
   set dataFruits(List<DataStruct> value) {
     _dataFruits = value;

@@ -86,7 +86,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
             ),
           ),
           title: Text(
-            'Payment',
+            'Moyen de paiement',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -153,7 +153,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 15.0, 0.0),
                           child: Text(
-                            'Payment method',
+                            'Moyen de paiement',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -179,7 +179,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 15.0, 0.0),
                           child: Text(
-                            'Select the payment method you want to use.',
+                            'Sélectionnez le moyen de paiement que vous souhaitez utiliser.',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -596,7 +596,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                 onPressed: () async {
                   context.safePop();
                 },
-                text: 'Save',
+                text: 'Enregistrer',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 52.0,

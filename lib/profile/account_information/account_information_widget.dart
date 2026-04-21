@@ -87,7 +87,7 @@ class _AccountInformationWidgetState extends State<AccountInformationWidget> {
             ),
           ),
           title: Text(
-            'Edit Profile',
+            'Modifier le profil',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -824,7 +824,7 @@ class _AccountInformationWidgetState extends State<AccountInformationWidget> {
                   onPressed: () async {
                     context.safePop();
                   },
-                  text: 'Save changes',
+                  text: 'Enregistrer',
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 52.0,

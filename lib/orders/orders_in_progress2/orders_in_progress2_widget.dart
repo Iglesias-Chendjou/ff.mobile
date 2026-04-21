@@ -346,7 +346,7 @@ class _OrdersInProgress2WidgetState extends State<OrdersInProgress2Widget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Still drink Farenheit',
+                                'Boisson anti-gaspi du jour',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(

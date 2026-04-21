@@ -32,15 +32,15 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
     super.initState();
     _model = createModel(context, () => CheckoutModel());
 
-    _model.textController1 ??= TextEditingController(text: 'Oliver Brooks');
+    _model.textController1 ??= TextEditingController(text: 'Jean Dupont');
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController(text: '+ 1 2345678910');
+    _model.textController2 ??= TextEditingController(text: '+32 470 12 34 56');
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController3 ??= TextEditingController(
         text:
-            'Please leave the package at the front door and ring the doorbell.');
+            'Veuillez laisser le colis devant la porte et sonner.');
     _model.textFieldFocusNode3 ??= FocusNode();
   }
 
@@ -84,7 +84,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
             ),
           ),
           title: Text(
-            'Checkout',
+            'Paiement',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -211,7 +211,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Delivery in 25-40 mins',
+                                          'Livraison en 25-40 min',
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
@@ -236,7 +236,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 3.0, 0.0, 0.0),
                                           child: Text(
-                                            'Apartment 4B, San Francisco ...',
+                                            'Appartement 4B, Bruxelles ...',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -339,7 +339,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Delivery time',
+                                    'Heure de livraison',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -442,7 +442,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Express',
+                                            'Expresse',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
@@ -557,7 +557,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Standart',
+                                            'Standard',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
@@ -672,7 +672,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Scheduled',
+                                            'Planifiée',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
@@ -717,7 +717,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 5.0, 0.0, 0.0),
                                       child: Text(
-                                        'Choose time',
+                                        'Choisir l\'heure',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -787,7 +787,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Personal information',
+                              'Informations personnelles',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -821,7 +821,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Full Name',
+                            'Nom complet',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -850,7 +850,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   isDense: true,
-                                  hintText: 'Enter your full name',
+                                  hintText: 'Entrez votre nom complet',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -947,7 +947,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Phone number',
+                            'Numéro de téléphone',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -976,7 +976,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   isDense: true,
-                                  hintText: 'Enter your full name',
+                                  hintText: 'Entrez votre numéro de téléphone',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -1073,7 +1073,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Instructions for courier',
+                            'Instructions pour le livreur',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -1102,7 +1102,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   isDense: true,
-                                  hintText: 'Enter your address',
+                                  hintText: 'Entrez votre adresse',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -1225,7 +1225,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Payment method',
+                                  'Moyen de paiement',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -1400,7 +1400,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Tip your rider',
+                              'Pourboire pour le livreur',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -1429,7 +1429,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
                       child: Text(
-                        '100% of the tips go to rider, we don\'t deduct anything from it.',
+                        '100% des pourboires vont au livreur, nous ne déduisons rien.',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
@@ -1595,7 +1595,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Save for your next order',
+                              'Sauvegarder pour la prochaine commande',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -1650,7 +1650,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Order summary',
+                              'Récapitulatif de commande',
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -1683,7 +1683,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Subtotal',
+                            'Sous-total',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -1733,7 +1733,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Delivery fee',
+                            'Frais de livraison',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -1783,7 +1783,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Tax',
+                            'Taxes',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -1898,7 +1898,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'By completing this order, I agree to all ',
+                              text: 'En finalisant cette commande, j\'accepte toutes les ',
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -1922,7 +1922,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Terms & Conditions.',
+                              text: 'Conditions Générales.',
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -2006,7 +2006,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Place order',
+                              'Passer la commande',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(

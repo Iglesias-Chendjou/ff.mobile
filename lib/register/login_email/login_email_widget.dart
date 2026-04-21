@@ -90,7 +90,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Welcome Back 👋',
+                          'Bon retour 👋',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -115,7 +115,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Text(
-                            'Welcome! Let\'s dive in your account.',
+                            'Bienvenue ! Connectez-vous a votre compte.',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -143,7 +143,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Email',
+                            'E-mail',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -173,7 +173,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your email',
+                                hintText: 'Entrez votre e-mail',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -258,7 +258,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Password',
+                            'Mot de passe',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -288,7 +288,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your password',
+                                hintText: 'Entrez votre mot de passe',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -401,7 +401,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                           context.pushNamed(ForgotPasswordWidget.routeName);
                         },
                         child: Text(
-                          'Forgot Password?',
+                          'Mot de passe oublie ?',
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     font: GoogleFonts.inter(
@@ -449,7 +449,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                             },
                           );
                         },
-                        text: 'Sign In',
+                        text: 'Se connecter',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
@@ -505,7 +505,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Text(
-                                'Or continue with',
+                                'Ou continuer avec',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -569,7 +569,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 28.0, 0.0),
                               child: Text(
-                                'Sign in with Google',
+                                'Se connecter avec Google',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
@@ -632,7 +632,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 28.0, 0.0),
                               child: Text(
-                                'Sign in with Apple',
+                                'Se connecter avec Apple',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
@@ -670,7 +670,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Don\'t have an account? ',
+                              text: 'Vous n\'avez pas de compte ? ',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -694,7 +694,7 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Sign Up',
+                              text: 'S\'inscrire',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(

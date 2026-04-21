@@ -121,7 +121,7 @@ class _CatalogSearchWidgetState extends State<CatalogSearchWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               isDense: false,
-                              hintText: 'Search for products',
+                              hintText: 'Rechercher des produits',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -223,7 +223,7 @@ class _CatalogSearchWidgetState extends State<CatalogSearchWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             15.0, 15.0, 15.0, 0.0),
                         child: Text(
-                          'What are you looking for?',
+                          'Que recherchez-vous ?',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(

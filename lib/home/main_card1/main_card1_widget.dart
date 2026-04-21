@@ -29,10 +29,15 @@ class MainCard1Widget extends StatefulWidget {
 
 class _MainCard1WidgetState extends State<MainCard1Widget> {
   static Widget _buildProductImage(String path, {double? width, double? height}) {
-    if (path.startsWith('http')) {
-      return Image.network(path, width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center);
+    if (path.isEmpty) {
+      return Image.asset('assets/images/600x600_(1).png', width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center);
     }
-    return Image.asset(path, width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center);
+    if (path.startsWith('http')) {
+      return Image.network(path, width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center,
+        errorBuilder: (context, error, stackTrace) => Image.asset('assets/images/600x600_(1).png', width: width, height: height, fit: BoxFit.contain));
+    }
+    return Image.asset(path, width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center,
+      errorBuilder: (context, error, stackTrace) => Image.asset('assets/images/600x600_(1).png', width: width, height: height, fit: BoxFit.contain));
   }
   late MainCard1Model _model;
 
@@ -288,7 +293,7 @@ class _MainCard1WidgetState extends State<MainCard1Widget> {
                   child: Text(
                     valueOrDefault<String>(
                       widget!.data?.title,
-                      'Still drink Farenheit',
+                      'Boisson anti-gaspi du jour',
                     ).maybeHandleOverflow(
                       maxChars: 16,
                       replacement: '…',

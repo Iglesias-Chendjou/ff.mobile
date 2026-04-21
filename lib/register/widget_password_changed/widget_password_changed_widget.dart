@@ -56,7 +56,7 @@ class _WidgetPasswordChangedWidgetState
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: Text(
-                'Password Changed!',
+                'Mot de passe modifié !',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       font: GoogleFonts.inter(
@@ -78,7 +78,7 @@ class _WidgetPasswordChangedWidgetState
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
               child: Text(
-                'Your password is saved. Click Log In to continue',
+                'Votre mot de passe a été enregistré. Cliquez sur Continuer pour poursuivre',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       font: GoogleFonts.inter(
@@ -113,7 +113,7 @@ class _WidgetPasswordChangedWidgetState
                     }.withoutNulls,
                   );
                 },
-                text: 'Continue',
+                text: 'Continuer',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 48.0,

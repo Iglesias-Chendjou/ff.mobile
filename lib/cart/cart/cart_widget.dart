@@ -414,10 +414,12 @@ class _CartWidgetState extends State<CartWidget> with TickerProviderStateMixin {
                                                                 .accent1,
                                                         image: DecorationImage(
                                                           fit: BoxFit.contain,
-                                                          image: (cartListItem.item.image.startsWith('http')
-                                                            ? Image.network(cartListItem.item.image)
-                                                            : Image.asset(cartListItem.item.image)
-                                                          ).image,
+                                                          image: (() {
+                                                            final imgPath = cartListItem.item.image;
+                                                            if (imgPath.isEmpty) return Image.asset('assets/images/600x600_(1).png').image;
+                                                            if (imgPath.startsWith('http')) return Image.network(imgPath).image;
+                                                            return Image.asset(imgPath).image;
+                                                          })(),
                                                         ),
                                                         borderRadius:
                                                             BorderRadius

@@ -53,7 +53,7 @@ class _Home2WidgetState extends State<Home2Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 10.0),
               child: Text(
-                'Follow the news and get discounts and bonuses every day.',
+                'Suivez les actus et profitez de réductions anti-gaspi chaque jour.',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       font: GoogleFonts.inter(
                         fontWeight:

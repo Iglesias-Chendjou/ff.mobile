@@ -64,7 +64,7 @@ class _CartitemDeleteWidgetState extends State<CartitemDeleteWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Remove item',
+                  'Supprimer l\u0027article',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         font: GoogleFonts.inter(
                           fontWeight: FlutterFlowTheme.of(context)
@@ -86,7 +86,7 @@ class _CartitemDeleteWidgetState extends State<CartitemDeleteWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Text(
-                    'Are you sure you want to remove this product from cart?',
+                    'Voulez-vous vraiment supprimer ce produit du panier ?',
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)
@@ -116,7 +116,7 @@ class _CartitemDeleteWidgetState extends State<CartitemDeleteWidget> {
                         onPressed: () async {
                           Navigator.pop(context);
                         },
-                        text: 'Cancel',
+                        text: 'Annuler',
                         options: FFButtonOptions(
                           height: 45.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -151,7 +151,7 @@ class _CartitemDeleteWidgetState extends State<CartitemDeleteWidget> {
                           FFAppState().update(() {});
                           Navigator.pop(context);
                         },
-                        text: 'Remove',
+                        text: 'Supprimer',
                         options: FFButtonOptions(
                           height: 45.0,
                           padding: EdgeInsetsDirectional.fromSTEB(

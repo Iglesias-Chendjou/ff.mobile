@@ -115,7 +115,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
                     child: Text(
-                      'Help',
+                      'Aide',
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)
@@ -363,7 +363,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 0.0),
                 child: Text(
-                  'Status: On the way',
+                  'Statut : En route',
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         font: GoogleFonts.inter(
                           fontWeight: FlutterFlowTheme.of(context)
@@ -401,7 +401,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(15.0, 25.0, 0.0, 0.0),
                 child: Text(
-                  'Details',
+                  'Détails',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         font: GoogleFonts.inter(
                           fontWeight: FlutterFlowTheme.of(context)
@@ -452,7 +452,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Items: \$56.78 / 7 pcs',
+                                    'Articles : \$56.78 / 7 pcs',
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -475,7 +475,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 3.0, 0.0, 0.0),
                                     child: Text(
-                                      'Apartment 4B, San Francisco ...',
+                                      'Appartement 4B, Bruxelles ...',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -550,7 +550,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                               },
                             );
                           },
-                          text: 'Cancel order',
+                          text: 'Annuler la commande',
                           options: FFButtonOptions(
                             width: 100.0,
                             height: 52.0,
@@ -593,7 +593,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                         onPressed: () async {
                           context.pushNamed(MessageWidget.routeName);
                         },
-                        text: 'Get help',
+                        text: 'Obtenir de l\u0027aide',
                         options: FFButtonOptions(
                           width: 100.0,
                           height: 52.0,

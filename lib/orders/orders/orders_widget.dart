@@ -83,7 +83,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Orders',
+            'Commandes',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -1920,7 +1920,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Home',
+                                        'Accueil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1982,7 +1982,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 2.0, 0.0, 0.0),
                                     child: Text(
-                                      'Catalog',
+                                      'Catalogue',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -2043,7 +2043,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
-                                    'Orders',
+                                    'Commandes',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -2120,7 +2120,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Profile',
+                                        'Profil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(

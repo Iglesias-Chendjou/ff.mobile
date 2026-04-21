@@ -215,7 +215,7 @@ class _WalkthroughWidgetState extends State<WalkthroughWidget> {
                                 );
                               }
                             },
-                            text: 'Next',
+                            text: 'Suivant',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 52.0,

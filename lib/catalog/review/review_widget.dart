@@ -72,7 +72,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
             ),
           ),
           title: Text(
-            'Write Review',
+            'Écrire un avis',
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.inter(
@@ -193,7 +193,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Write Your Review',
+                          'Rédigez votre avis',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
@@ -226,7 +226,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your email',
+                                hintText: 'Écrivez votre avis',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -319,7 +319,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Submit',
+                  text: 'Envoyer',
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 52.0,

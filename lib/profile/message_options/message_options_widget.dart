@@ -95,7 +95,7 @@ class _MessageOptionsWidgetState extends State<MessageOptionsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Clear Chat',
+                                'Effacer la conversation',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -159,7 +159,7 @@ class _MessageOptionsWidgetState extends State<MessageOptionsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Export Chat',
+                                'Exporter la conversation',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -222,7 +222,7 @@ class _MessageOptionsWidgetState extends State<MessageOptionsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Delete Chat',
+                                'Supprimer la conversation',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -275,7 +275,7 @@ class _MessageOptionsWidgetState extends State<MessageOptionsWidget> {
                   child: Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
-                      'Cancel',
+                      'Annuler',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)

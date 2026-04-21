@@ -85,7 +85,7 @@ class _WidgetLoadingRegisterWidgetState
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
               child: Text(
-                'Loading ...',
+                'Chargement ...',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).titleMedium.override(
                       font: GoogleFonts.inter(

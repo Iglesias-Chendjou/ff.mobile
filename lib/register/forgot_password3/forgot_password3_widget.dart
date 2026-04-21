@@ -105,7 +105,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Create New Password',
+                          'Créer un nouveau mot de passe',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -130,7 +130,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Text(
-                            'In order to recover, you need to enter a new password',
+                            'Pour récupérer votre compte, veuillez entrer un nouveau mot de passe',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -158,7 +158,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'New Password',
+                            'Nouveau mot de passe',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -188,7 +188,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                               obscureText: !_model.passwordVisibility1,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your password',
+                                hintText: 'Entrez votre mot de passe',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -288,7 +288,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Confirm Password',
+                            'Confirmer le mot de passe',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -318,7 +318,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                               obscureText: !_model.passwordVisibility2,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your password',
+                                hintText: 'Entrez votre mot de passe',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -445,7 +445,7 @@ class _ForgotPassword3WidgetState extends State<ForgotPassword3Widget> {
                             },
                           );
                         },
-                        text: 'Create New Password',
+                        text: 'Créer un nouveau mot de passe',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,

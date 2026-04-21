@@ -67,7 +67,7 @@ class _AboutFreshGoWidgetState extends State<AboutFreshGoWidget> {
             ),
           ),
           title: Text(
-            'About FreshGo',
+            'À propos de FoodFirst',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -102,7 +102,7 @@ class _AboutFreshGoWidgetState extends State<AboutFreshGoWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
-                  'FreshGo',
+                  'FoodFirst',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         font: GoogleFonts.inter(
                           fontWeight: FlutterFlowTheme.of(context)
@@ -146,7 +146,7 @@ class _AboutFreshGoWidgetState extends State<AboutFreshGoWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(15.0, 35.0, 15.0, 0.0),
                 child: Text(
-                  'Welcome to FreshGo – your reliable partner for grocery delivery!\n\nAt FreshGo, we believe that shopping for everyday essentials should be simple, fast, and stress-free. That’s why we’ve created a platform that connects you with fresh and high-quality groceries, delivered straight to your door with just a few taps.\n\nOur Mission\nOur mission is to make grocery shopping convenient and accessible for everyone. Whether you’re a busy professional, a parent, or simply looking for an easier way to stock up on essentials, FreshGo is here to save you time and effort.\n\nWhat We Offer\nWide Selection: From fresh produce and dairy to beverages and pantry staples, we have everything you need.\nFast Delivery: Get your groceries delivered quickly and on time.\nEasy-to-Use App: Our user-friendly interface makes browsing, selecting, and ordering a breeze.\nExclusive Deals: Enjoy special discounts and promotions every day.\nWhy Choose FreshGo?\nFreshness Guaranteed: We partner with trusted suppliers to ensure the highest quality products.\nCustomer-Centric Service: Your satisfaction is our top priority, and we’re always here to help.\nSustainability: We’re committed to eco-friendly practices, using minimal packaging and optimizing delivery routes to reduce our carbon footprint.\nOur Vision\nWe aim to revolutionize the grocery shopping experience, empowering communities to enjoy fresh, affordable, and hassle-free access to the essentials they need.\n\nJoin the FreshGo Family\nWe’re more than just a grocery delivery service – we’re here to make your life easier. Thank you for choosing FreshGo, and we look forward to serving you!',
+"Bienvenue sur FoodFirst - votre partenaire anti-gaspi a Bruxelles !\n\nChez FoodFirst, nous croyons que lutter contre le gaspillage alimentaire devrait etre simple, rapide et accessible a tous. C’est pourquoi nous avons cree une plateforme qui vous connecte aux produits frais et de qualite a prix reduit, livres directement chez vous en quelques clics.\n\nNotre Mission\nNotre mission est de reduire le gaspillage alimentaire tout en rendant les courses accessibles a tous. Que vous soyez un professionnel presse, un parent ou simplement a la recherche de bons plans, FoodFirst est la pour vous faire gagner du temps et de l’argent.\n\nCe que nous offrons\nLarge selection : Des fruits et legumes frais aux produits laitiers, en passant par les boissons et l’epicerie.\nLivraison rapide : Recevez vos courses rapidement et a l’heure.\nApplication intuitive : Notre interface simple rend la navigation et la commande agreables.\nOffres exclusives : Profitez de reductions anti-gaspi chaque jour.\n\nPourquoi choisir FoodFirst ?\nFraicheur garantie : Nous collaborons avec des magasins de confiance pour garantir des produits de qualite.\nService client : Votre satisfaction est notre priorite, nous sommes toujours la pour vous aider.\nEco-responsable : Nous reduisons le gaspillage alimentaire et optimisons nos livraisons pour limiter notre empreinte carbone.\n\nNotre Vision\nNous voulons transformer l’experience des courses en permettant a chacun d’acceder a des produits frais, abordables et anti-gaspi.\n\nRejoignez la famille FoodFirst\nNous sommes bien plus qu’un service de livraison - nous sommes engages pour un avenir sans gaspillage. Merci de faire confiance a FoodFirst !",
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         font: GoogleFonts.inter(
                           fontWeight: FlutterFlowTheme.of(context)

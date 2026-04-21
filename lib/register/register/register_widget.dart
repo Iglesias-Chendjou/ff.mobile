@@ -93,7 +93,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Create New Account 🔒',
+                          'Creer un nouveau compte 🔒',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -118,7 +118,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Text(
-                            'Create your acoount in seconds. Your privacy is important to us',
+                            'Creez votre compte en quelques secondes. Votre vie privee est importante pour nous',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -146,7 +146,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Full Name',
+                            'Nom complet',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -176,7 +176,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Enter your name',
+                                hintText: 'Entrez votre nom',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -261,7 +261,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Email',
+                            'E-mail',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -291,7 +291,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your email',
+                                hintText: 'Entrez votre e-mail',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -376,7 +376,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Password',
+                            'Mot de passe',
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -406,7 +406,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Emter your password',
+                                hintText: 'Entrez votre mot de passe',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -533,7 +533,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             },
                           );
                         },
-                        text: 'Sign Up',
+                        text: 'S\'inscrire',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
@@ -575,7 +575,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'By registering you agree to ',
+                              text: 'En vous inscrivant, vous acceptez les ',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -599,7 +599,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Terms & Conditions ',
+                              text: 'Conditions generales ',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -618,7 +618,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'and ',
+                              text: 'et la ',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -642,7 +642,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Privacy Policy',
+                              text: 'Politique de confidentialite',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -695,7 +695,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Already have an account? ',
+                              text: 'Vous avez deja un compte ? ',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -719,7 +719,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                             ),
                             TextSpan(
-                              text: 'Sign In',
+                              text: 'Se connecter',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(

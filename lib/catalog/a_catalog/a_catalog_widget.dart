@@ -83,7 +83,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Catalog',
+            'Catalogue',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -189,7 +189,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Everything \nfor the New Year',
+                                            'Promos\ndu moment',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -252,7 +252,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'From the \nCrossroads',
+                                            'Anti-gaspi\ndu jour',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -324,7 +324,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Ready-made\nfood',
+                                            'Plats\npréparés',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -387,7 +387,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Milk, cheese,\neggs',
+                                            'Produits\nlaitiers',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -459,7 +459,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Vegetables &\nfruits',
+                                            'Fruits &\nlégumes',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -522,7 +522,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Pasta, oil,\nspices',
+                                            'Épicerie\nsalée',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -594,7 +594,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Chips, snacks,\npopcorn',
+                                            'Snacks &\napéro',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -657,7 +657,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Chocolate,\nsweets',
+                                            'Chocolat &\nconfiseries',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -729,7 +729,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Juices, waters,\ndrinks',
+                                            'Jus, eaux,\nboissons',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -792,7 +792,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Bread & \npastries',
+                                            'Boulangerie &\npâtisseries',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -864,7 +864,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Meat & \npoultry',
+                                            'Viandes &\nvolailles',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -927,7 +927,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Sausage\nproducts',
+                                            'Charcuterie\n& traiteur',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -999,7 +999,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Seafood',
+                                            'Poissons &\nfruits de mer',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1062,7 +1062,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'For mothers\n& children',
+                                            'Bébé &\nmaternité',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1134,7 +1134,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Sauces, ketchups,\nmayonnaises',
+                                            'Sauces &\ncondiments',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1197,7 +1197,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Coffee, tea,\ncocoa, sugar',
+                                            'Café, thé,\ncacao, sucre',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1269,7 +1269,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Dry breakfast,\ncereals',
+                                            'Céréales &\npetit-déjeuner',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1332,7 +1332,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Fast food\nproducts',
+                                            'Plats rapides\n& surgelés',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1404,7 +1404,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Conservation',
+                                            'Conserves',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1467,7 +1467,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Health',
+                                            'Santé &\nbien-être',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1539,7 +1539,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Nuts, seeds,\ndried fruits',
+                                            'Fruits secs,\ngraines, noix',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1602,7 +1602,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Honey, jam,\nsyrups',
+                                            'Miel, confiture,\nsirop',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1674,7 +1674,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Pet supplies',
+                                            'Animaux',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1737,7 +1737,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Beauty,\npharmacy',
+                                            'Beauté &\npharmacie',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1809,7 +1809,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Cleaning',
+                                            'Produits\nd\'entretien',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1872,7 +1872,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'For home &\ngarden',
+                                            'Maison &\njardin',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
@@ -1982,7 +1982,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Home',
+                                        'Accueil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -2026,7 +2026,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 2.0, 0.0, 0.0),
                                   child: Text(
-                                    'Catalog',
+                                    'Catalogue',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -2104,7 +2104,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'Orders',
+                                      'Commandes',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -2182,7 +2182,7 @@ class _ACatalogWidgetState extends State<ACatalogWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Profile',
+                                        'Profil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(

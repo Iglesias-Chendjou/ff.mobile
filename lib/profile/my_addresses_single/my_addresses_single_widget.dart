@@ -31,7 +31,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
     _model = createModel(context, () => MyAddressesSingleModel());
 
     _model.textController1 ??=
-        TextEditingController(text: 'Apartment 4B, San Francisco');
+        TextEditingController(text: 'Appartement 4B, Bruxelles');
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
@@ -48,7 +48,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
 
     _model.textController6 ??= TextEditingController(
         text:
-            'Please leave the package at the front door and ring the doorbell.');
+            'Veuillez laisser le colis devant la porte et sonner.');
     _model.textFieldFocusNode6 ??= FocusNode();
   }
 
@@ -89,7 +89,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
             ),
           ),
           title: Text(
-            'Add New Address',
+            'Ajouter une adresse',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -137,7 +137,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Name',
+                          'Nom',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     font: GoogleFonts.inter(
@@ -165,7 +165,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Enter your address',
+                                hintText: 'Entrez votre adresse',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -262,7 +262,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Entrance',
+                                'Entrée',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -291,7 +291,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      hintText: 'Entrance',
+                                      hintText: 'Entrée',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -398,7 +398,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Door phone',
+                                'Interphone',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -427,7 +427,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      hintText: 'Door phone',
+                                      hintText: 'Interphone',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -543,7 +543,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Apartment',
+                                'Appartement',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -572,7 +572,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      hintText: 'Apartment',
+                                      hintText: 'Appartement',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -679,7 +679,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Floor',
+                                'Étage',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -708,7 +708,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      hintText: 'Floor',
+                                      hintText: 'Étage',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -820,7 +820,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Instructions for courier',
+                          'Instructions pour le livreur',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     font: GoogleFonts.inter(
@@ -848,7 +848,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                hintText: 'Enter your address',
+                                hintText: 'Entrez votre adresse',
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -944,7 +944,7 @@ class _MyAddressesSingleWidgetState extends State<MyAddressesSingleWidget> {
                 onPressed: () async {
                   context.safePop();
                 },
-                text: 'Save',
+                text: 'Enregistrer',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 52.0,

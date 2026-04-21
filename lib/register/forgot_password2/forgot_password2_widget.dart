@@ -111,7 +111,7 @@ class _ForgotPassword2WidgetState extends State<ForgotPassword2Widget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Enter Verification Code',
+                          'Entrez le code de verification',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -136,7 +136,7 @@ class _ForgotPassword2WidgetState extends State<ForgotPassword2Widget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Text(
-                            'To continue, please enter the code sent to your email',
+                            'Pour continuer, veuillez entrer le code envoye a votre e-mail',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -607,7 +607,7 @@ class _ForgotPassword2WidgetState extends State<ForgotPassword2Widget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 40.0, 0.0, 0.0),
                             child: Text(
-                              'You can resend the code in 54 seconds',
+                              'Vous pouvez renvoyer le code dans 54 secondes',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -638,7 +638,7 @@ class _ForgotPassword2WidgetState extends State<ForgotPassword2Widget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
-                              'Resend Code',
+                              'Renvoyer le code',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -668,7 +668,7 @@ class _ForgotPassword2WidgetState extends State<ForgotPassword2Widget> {
                       onPressed: () async {
                         context.pushNamed(ForgotPassword3Widget.routeName);
                       },
-                      text: 'Continue',
+                      text: 'Continuer',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 52.0,

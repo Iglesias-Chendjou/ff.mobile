@@ -53,7 +53,7 @@ class _Archive2WidgetState extends State<Archive2Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 12.0),
               child: Text(
-                'Sort products by all parameters',
+                'Triez les produits selon tous les critères',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       font: GoogleFonts.inter(
                         fontWeight:

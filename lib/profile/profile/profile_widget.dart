@@ -84,7 +84,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Profile',
+            'Profil',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.inter(
                     fontWeight:
@@ -1313,7 +1313,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .fromSTEB(15.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Appearance',
+                                                      'Apparence',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1357,9 +1357,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                   Brightness
                                                                       .light) ==
                                                               true
-                                                          ? 'Light'
-                                                          : 'Dark',
-                                                      'Light',
+                                                          ? 'Clair'
+                                                          : 'Sombre',
+                                                      'Clair',
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1460,7 +1460,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .fromSTEB(15.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Security',
+                                                      'Sécurité',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1896,7 +1896,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Home',
+                                        'Accueil',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1958,7 +1958,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 2.0, 0.0, 0.0),
                                     child: Text(
-                                      'Catalog',
+                                      'Catalogue',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -2096,7 +2096,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'Profile',
+                                      'Profil',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(

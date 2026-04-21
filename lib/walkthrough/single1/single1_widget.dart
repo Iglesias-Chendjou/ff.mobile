@@ -53,7 +53,7 @@ class _Single1WidgetState extends State<Single1Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 12.0),
               child: Text(
-                'You can add a new payment method. Click this to add',
+                'Vous pouvez ajouter un nouveau moyen de paiement. Cliquez ici pour ajouter',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       font: GoogleFonts.inter(
                         fontWeight:

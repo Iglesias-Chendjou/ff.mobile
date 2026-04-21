@@ -706,7 +706,7 @@ class _OrdersDeliveredWidgetState extends State<OrdersDeliveredWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Still drink Farenheit',
+                                'Boisson anti-gaspi du jour',
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
