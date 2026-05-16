@@ -4,6 +4,13 @@
 Plateforme Anti-Gaspi Bruxelles — Application mobile client (iOS & Android).
 App principale permettant aux clients de commander, suivre les livraisons en temps reel, gerer abonnements et colis surprise.
 
+Le catalogue agrège 3 sources d'approvisionnement coexistantes (focus n°1 = invendables magasin) :
+1. **Invendables magasin** (`Reason = Unsellable`, focus) — emballage abîmé, alvéole incomplète, surstock, défauts 666
+2. **Invendus DLC J+1 magasin** (`Reason = NearExpiry`)
+3. **Achat en gros producteurs** (`SourceType = ProducerBulk`)
+
+Chaque produit du catalogue doit afficher un **badge** selon `Reason`/`UnsellableSubReason` (ex. "Emballage abîmé", "DLC demain") et la note libre `ReasonNotes` si présente.
+
 ## Stack technique
 - **Framework** : Flutter (Dart)
 - **State management** : Riverpod ou BLoC
@@ -64,7 +71,8 @@ ff.mobile/
 - **Zone** : detecter la localisation GPS du client pour filtrer le catalogue par zone
 - **Push notifications** : demander la permission au premier lancement
 - **Mode hors-ligne** : cache du catalogue pour navigation offline, sync au retour
-- **Prix** : afficher prix barre + prix -50%
+- **Prix** : afficher prix barré + prix discounté **issu de l'API** (`AvailableProductDto.DiscountedPrice`) — ne PAS recalculer -50% côté mobile car le magasin peut surcharger la décote via `DiscountPercentOverride`
+- **Badges** : afficher la raison de mise en vente sur la card produit (Reason + UnsellableSubReason) avec un libellé i18n adapté
 
 ## Conventions
 - Langue du code : anglais
