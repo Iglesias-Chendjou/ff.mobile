@@ -30,6 +30,35 @@ class MainSingleWidget extends StatefulWidget {
 }
 
 class _MainSingleWidgetState extends State<MainSingleWidget> {
+  static String? _reasonBadgeLabel(DataStruct? data) {
+    if (data == null) return null;
+    final reason = data.hasReason() ? data.reason : '';
+    if (reason == 'Unsellable') {
+      final sub = data.hasUnsellableSubReason() ? data.unsellableSubReason : '';
+      switch (sub) {
+        case 'DamagedPackaging':
+          return 'Emballage abîmé';
+        case 'IncompletePack':
+          return 'Alvéole incomplète';
+        case 'Overstock':
+          return 'Surstock';
+        case 'PackagingDefect666':
+          return 'Défaut 666';
+        default:
+          return 'Invendable';
+      }
+    }
+    if (reason == 'NearExpiry') return 'DLC demain';
+    return null;
+  }
+
+  static Color _reasonBadgeColor(BuildContext context, DataStruct? data) {
+    if (data == null) return FlutterFlowTheme.of(context).success;
+    final reason = data.hasReason() ? data.reason : '';
+    if (reason == 'NearExpiry') return const Color(0xFFFF9800);
+    return FlutterFlowTheme.of(context).success;
+  }
+
   late MainSingleModel _model;
 
   @override
@@ -166,18 +195,19 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                               ),
                                             ),
                                           ),
-                                          if (widget!.data?.tag1 != null &&
-                                              widget!.data?.tag1 != '')
+                                          if (_MainSingleWidgetState
+                                                  ._reasonBadgeLabel(
+                                                      widget!.data) !=
+                                              null)
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 6.0, 0.0, 0.0),
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: valueOrDefault<Color>(
-                                                    widget!.data?.tag1Color,
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                  ),
+                                                  color: _MainSingleWidgetState
+                                                      ._reasonBadgeColor(
+                                                          context,
+                                                          widget!.data),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           5.0),
@@ -187,10 +217,9 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                                       .fromSTEB(
                                                           3.0, 2.0, 3.0, 2.0),
                                                   child: Text(
-                                                    valueOrDefault<String>(
-                                                      widget!.data?.tag1,
-                                                      'SANS SUCRE',
-                                                    ),
+                                                    _MainSingleWidgetState
+                                                        ._reasonBadgeLabel(
+                                                            widget!.data)!,
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -360,6 +389,44 @@ class _MainSingleWidgetState extends State<MainSingleWidget> {
                                     ),
                                   ),
                                 ),
+                                if (widget!.data?.hasReasonNotes() == true &&
+                                    widget!.data!.reasonNotes.isNotEmpty)
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15.0, 10.0, 15.0, 0.0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Icon(
+                                          Icons.info_outline,
+                                          size: 16.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                        ),
+                                        SizedBox(width: 6.0),
+                                        Expanded(
+                                          child: Text(
+                                            widget!.data!.reasonNotes,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontStyle:
+                                                        FontStyle.italic,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontSize: 13.0,
+                                                  fontStyle: FontStyle.italic,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 0.0),

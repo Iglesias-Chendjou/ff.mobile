@@ -129,6 +129,9 @@ class FFAppState extends ChangeNotifier {
             oldPrice: originalPrice,
             newPrice: discountedPrice,
             id: (p['storeInventoryId']?.hashCode ?? 0) % 100000,
+            reason: p['reason'] as String?,
+            unsellableSubReason: p['unsellableSubReason'] as String?,
+            reasonNotes: p['reasonNotes'] as String?,
           );
         }).toList();
         prefs.setStringList(

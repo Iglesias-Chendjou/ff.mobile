@@ -39,6 +39,36 @@ class _MainCard1WidgetState extends State<MainCard1Widget> {
     return Image.asset(path, width: width, height: height, fit: BoxFit.contain, alignment: Alignment.center,
       errorBuilder: (context, error, stackTrace) => Image.asset('assets/images/600x600_(1).png', width: width, height: height, fit: BoxFit.contain));
   }
+
+  static String? _reasonBadgeLabel(DataStruct? data) {
+    if (data == null) return null;
+    final reason = data.hasReason() ? data.reason : '';
+    if (reason == 'Unsellable') {
+      final sub = data.hasUnsellableSubReason() ? data.unsellableSubReason : '';
+      switch (sub) {
+        case 'DamagedPackaging':
+          return 'Emballage abîmé';
+        case 'IncompletePack':
+          return 'Alvéole incomplète';
+        case 'Overstock':
+          return 'Surstock';
+        case 'PackagingDefect666':
+          return 'Défaut 666';
+        default:
+          return 'Invendable';
+      }
+    }
+    if (reason == 'NearExpiry') return 'DLC demain';
+    return null;
+  }
+
+  static Color _reasonBadgeColor(BuildContext context, DataStruct? data) {
+    if (data == null) return FlutterFlowTheme.of(context).success;
+    final reason = data.hasReason() ? data.reason : '';
+    if (reason == 'NearExpiry') return const Color(0xFFFF9800); // orange DLC
+    return FlutterFlowTheme.of(context).success; // vert anti-gaspi pour invendables
+  }
+
   late MainCard1Model _model;
 
   @override
@@ -162,27 +192,21 @@ class _MainCard1WidgetState extends State<MainCard1Widget> {
                               ),
                             ),
                           ),
-                          if (widget!.data?.tag1 != null &&
-                              widget!.data?.tag1 != '')
+                          if (_reasonBadgeLabel(widget!.data) != null)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 2.0, 0.0, 0.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: valueOrDefault<Color>(
-                                    widget!.data?.tag1Color,
-                                    FlutterFlowTheme.of(context).success,
-                                  ),
+                                  color: _reasonBadgeColor(
+                                      context, widget!.data),
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       3.0, 2.0, 3.0, 2.0),
                                   child: Text(
-                                    valueOrDefault<String>(
-                                      widget!.data?.tag1,
-                                      'NO SUGAR',
-                                    ),
+                                    _reasonBadgeLabel(widget!.data)!,
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium

@@ -18,6 +18,9 @@ class DataStruct extends BaseStruct {
     double? oldPrice,
     double? newPrice,
     int? id,
+    String? reason,
+    String? unsellableSubReason,
+    String? reasonNotes,
   })  : _title = title,
         _image = image,
         _priceOld = priceOld,
@@ -28,7 +31,10 @@ class DataStruct extends BaseStruct {
         _description = description,
         _oldPrice = oldPrice,
         _newPrice = newPrice,
-        _id = id;
+        _id = id,
+        _reason = reason,
+        _unsellableSubReason = unsellableSubReason,
+        _reasonNotes = reasonNotes;
 
   // "title" field.
   String? _title;
@@ -113,6 +119,27 @@ class DataStruct extends BaseStruct {
 
   bool hasId() => _id != null;
 
+  // "reason" field.
+  String? _reason;
+  String get reason => _reason ?? '';
+  set reason(String? val) => _reason = val;
+
+  bool hasReason() => _reason != null;
+
+  // "unsellableSubReason" field.
+  String? _unsellableSubReason;
+  String get unsellableSubReason => _unsellableSubReason ?? '';
+  set unsellableSubReason(String? val) => _unsellableSubReason = val;
+
+  bool hasUnsellableSubReason() => _unsellableSubReason != null;
+
+  // "reasonNotes" field.
+  String? _reasonNotes;
+  String get reasonNotes => _reasonNotes ?? '';
+  set reasonNotes(String? val) => _reasonNotes = val;
+
+  bool hasReasonNotes() => _reasonNotes != null;
+
   static DataStruct fromMap(Map<String, dynamic> data) => DataStruct(
         title: data['title'] as String?,
         image: data['image'] as String?,
@@ -125,6 +152,9 @@ class DataStruct extends BaseStruct {
         oldPrice: castToType<double>(data['OldPrice']),
         newPrice: castToType<double>(data['NewPrice']),
         id: castToType<int>(data['id']),
+        reason: data['reason'] as String?,
+        unsellableSubReason: data['unsellableSubReason'] as String?,
+        reasonNotes: data['reasonNotes'] as String?,
       );
 
   static DataStruct? maybeFromMap(dynamic data) =>
@@ -142,6 +172,9 @@ class DataStruct extends BaseStruct {
         'OldPrice': _oldPrice,
         'NewPrice': _newPrice,
         'id': _id,
+        'reason': _reason,
+        'unsellableSubReason': _unsellableSubReason,
+        'reasonNotes': _reasonNotes,
       }.withoutNulls;
 
   @override
@@ -189,6 +222,18 @@ class DataStruct extends BaseStruct {
         'id': serializeParam(
           _id,
           ParamType.int,
+        ),
+        'reason': serializeParam(
+          _reason,
+          ParamType.String,
+        ),
+        'unsellableSubReason': serializeParam(
+          _unsellableSubReason,
+          ParamType.String,
+        ),
+        'reasonNotes': serializeParam(
+          _reasonNotes,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -249,6 +294,21 @@ class DataStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
+        reason: deserializeParam(
+          data['reason'],
+          ParamType.String,
+          false,
+        ),
+        unsellableSubReason: deserializeParam(
+          data['unsellableSubReason'],
+          ParamType.String,
+          false,
+        ),
+        reasonNotes: deserializeParam(
+          data['reasonNotes'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -267,7 +327,10 @@ class DataStruct extends BaseStruct {
         description == other.description &&
         oldPrice == other.oldPrice &&
         newPrice == other.newPrice &&
-        id == other.id;
+        id == other.id &&
+        reason == other.reason &&
+        unsellableSubReason == other.unsellableSubReason &&
+        reasonNotes == other.reasonNotes;
   }
 
   @override
@@ -282,7 +345,10 @@ class DataStruct extends BaseStruct {
         description,
         oldPrice,
         newPrice,
-        id
+        id,
+        reason,
+        unsellableSubReason,
+        reasonNotes,
       ]);
 }
 
@@ -298,6 +364,9 @@ DataStruct createDataStruct({
   double? oldPrice,
   double? newPrice,
   int? id,
+  String? reason,
+  String? unsellableSubReason,
+  String? reasonNotes,
 }) =>
     DataStruct(
       title: title,
@@ -311,4 +380,7 @@ DataStruct createDataStruct({
       oldPrice: oldPrice,
       newPrice: newPrice,
       id: id,
+      reason: reason,
+      unsellableSubReason: unsellableSubReason,
+      reasonNotes: reasonNotes,
     );
