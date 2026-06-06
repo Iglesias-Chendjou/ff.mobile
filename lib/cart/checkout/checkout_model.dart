@@ -29,6 +29,9 @@ class CheckoutModel extends FlutterFlowModel<CheckoutWidget> {
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
+  // Payment flow state
+  bool isPlacingOrder = false;
+
   @override
   void initState(BuildContext context) {}
 

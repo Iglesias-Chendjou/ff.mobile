@@ -132,6 +132,7 @@ class FFAppState extends ChangeNotifier {
             reason: p['reason'] as String?,
             unsellableSubReason: p['unsellableSubReason'] as String?,
             reasonNotes: p['reasonNotes'] as String?,
+            storeInventoryId: p['storeInventoryId'] as String?,
           );
         }).toList();
         prefs.setStringList(

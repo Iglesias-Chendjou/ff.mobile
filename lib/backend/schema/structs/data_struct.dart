@@ -21,6 +21,7 @@ class DataStruct extends BaseStruct {
     String? reason,
     String? unsellableSubReason,
     String? reasonNotes,
+    String? storeInventoryId,
   })  : _title = title,
         _image = image,
         _priceOld = priceOld,
@@ -34,7 +35,8 @@ class DataStruct extends BaseStruct {
         _id = id,
         _reason = reason,
         _unsellableSubReason = unsellableSubReason,
-        _reasonNotes = reasonNotes;
+        _reasonNotes = reasonNotes,
+        _storeInventoryId = storeInventoryId;
 
   // "title" field.
   String? _title;
@@ -140,6 +142,13 @@ class DataStruct extends BaseStruct {
 
   bool hasReasonNotes() => _reasonNotes != null;
 
+  // "storeInventoryId" field (real backend Guid).
+  String? _storeInventoryId;
+  String get storeInventoryId => _storeInventoryId ?? '';
+  set storeInventoryId(String? val) => _storeInventoryId = val;
+
+  bool hasStoreInventoryId() => _storeInventoryId != null;
+
   static DataStruct fromMap(Map<String, dynamic> data) => DataStruct(
         title: data['title'] as String?,
         image: data['image'] as String?,
@@ -155,6 +164,7 @@ class DataStruct extends BaseStruct {
         reason: data['reason'] as String?,
         unsellableSubReason: data['unsellableSubReason'] as String?,
         reasonNotes: data['reasonNotes'] as String?,
+        storeInventoryId: data['storeInventoryId'] as String?,
       );
 
   static DataStruct? maybeFromMap(dynamic data) =>
@@ -175,6 +185,7 @@ class DataStruct extends BaseStruct {
         'reason': _reason,
         'unsellableSubReason': _unsellableSubReason,
         'reasonNotes': _reasonNotes,
+        'storeInventoryId': _storeInventoryId,
       }.withoutNulls;
 
   @override
@@ -233,6 +244,10 @@ class DataStruct extends BaseStruct {
         ),
         'reasonNotes': serializeParam(
           _reasonNotes,
+          ParamType.String,
+        ),
+        'storeInventoryId': serializeParam(
+          _storeInventoryId,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -309,6 +324,11 @@ class DataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        storeInventoryId: deserializeParam(
+          data['storeInventoryId'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -330,7 +350,8 @@ class DataStruct extends BaseStruct {
         id == other.id &&
         reason == other.reason &&
         unsellableSubReason == other.unsellableSubReason &&
-        reasonNotes == other.reasonNotes;
+        reasonNotes == other.reasonNotes &&
+        storeInventoryId == other.storeInventoryId;
   }
 
   @override
@@ -349,6 +370,7 @@ class DataStruct extends BaseStruct {
         reason,
         unsellableSubReason,
         reasonNotes,
+        storeInventoryId,
       ]);
 }
 
@@ -367,6 +389,7 @@ DataStruct createDataStruct({
   String? reason,
   String? unsellableSubReason,
   String? reasonNotes,
+  String? storeInventoryId,
 }) =>
     DataStruct(
       title: title,
@@ -383,4 +406,5 @@ DataStruct createDataStruct({
       reason: reason,
       unsellableSubReason: unsellableSubReason,
       reasonNotes: reasonNotes,
+      storeInventoryId: storeInventoryId,
     );

@@ -1,3 +1,5 @@
+import '/backend/schema/structs/index.dart';
+import '/core/api_service.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1991,8 +1993,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed(CheckoutSuccessWidget.routeName);
+                      onTap: _model.isPlacingOrder ? null : () async {
+                        await _placeOrder();
                       },
                       child: Container(
                         width: double.infinity,
@@ -2005,8 +2007,20 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            if (_model.isPlacingOrder)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                child: SizedBox(
+                                  width: 18,
+                                  height: 18,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: FlutterFlowTheme.of(context).info,
+                                  ),
+                                ),
+                              ),
                             Text(
-                              'Passer la commande',
+                              _model.isPlacingOrder ? 'Traitement…' : 'Passer la commande',
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -2036,5 +2050,70 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
         ),
       ),
     );
+  }
+
+  Future<void> _placeOrder() async {
+    final cart = FFAppState().CartList;
+    if (cart.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Votre panier est vide.')),
+      );
+      return;
+    }
+
+    final items = <Map<String, dynamic>>[];
+    for (final c in cart) {
+      final sid = c.item.storeInventoryId;
+      if (sid.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Produits non synchronises avec le serveur.')),
+        );
+        return;
+      }
+      items.add({'storeInventoryId': sid, 'quantity': c.quantity});
+    }
+
+    safeSetState(() => _model.isPlacingOrder = true);
+    try {
+      final api = ApiService();
+      final addresses = await api.fetchMyAddresses();
+      if (addresses.isEmpty) {
+        throw Exception('Aucune adresse de livraison disponible.');
+      }
+      final addr = addresses.firstWhere(
+        (a) => a['isDefault'] == true,
+        orElse: () => addresses.first,
+      );
+      final addrId = addr['id'] as String;
+
+      final order = await api.createOrder(
+        items: items,
+        deliveryAddressId: addrId,
+        notes: null,
+      );
+      if (order == null) throw Exception('Echec creation commande.');
+      final orderId = order['id'] as String;
+
+      final intent = await api.createPaymentIntent(orderId);
+      if (intent == null) throw Exception('Echec creation paiement.');
+      final piId = intent['paymentIntentId'] as String;
+
+      final confirm = await api.confirmMockPayment(piId);
+      if (confirm == null || confirm['status'] != 'Succeeded') {
+        throw Exception('Echec confirmation paiement.');
+      }
+
+      FFAppState().CartList = [];
+
+      if (!mounted) return;
+      await context.pushNamed(CheckoutSuccessWidget.routeName);
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Erreur : $e')),
+      );
+    } finally {
+      if (mounted) safeSetState(() => _model.isPlacingOrder = false);
+    }
   }
 }
