@@ -119,7 +119,121 @@ class ApiService {
     }
   }
 
-  // --- ORDERS ---
+  // --- CART / ORDERS ---
+
+  Future<Map<String, dynamic>?> validateCart({
+    required List<Map<String, dynamic>> items,
+    required String deliveryAddressId,
+  }) async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.post(
+        Uri.parse('$_baseUrl/api/cart/validate'),
+        headers: _authHeaders,
+        body: jsonEncode({'items': items, 'deliveryAddressId': deliveryAddressId}),
+      );
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('Cart validate failed: ${response.statusCode} ${response.body}');
+      return null;
+    } catch (e) {
+      debugPrint('Cart validate error: $e');
+      return null;
+    }
+  }
+
+  Future<Map<String, dynamic>?> createOrder({
+    required List<Map<String, dynamic>> items,
+    required String deliveryAddressId,
+    String? notes,
+  }) async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.post(
+        Uri.parse('$_baseUrl/api/orders'),
+        headers: _authHeaders,
+        body: jsonEncode({
+          'items': items,
+          'deliveryAddressId': deliveryAddressId,
+          'notes': notes,
+        }),
+      );
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        return jsonDecode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('Create order failed: ${response.statusCode} ${response.body}');
+      return null;
+    } catch (e) {
+      debugPrint('Create order error: $e');
+      return null;
+    }
+  }
+
+  Future<Map<String, dynamic>?> createPaymentIntent(String orderId) async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.post(
+        Uri.parse('$_baseUrl/api/payments/intent'),
+        headers: _authHeaders,
+        body: jsonEncode({'orderId': orderId}),
+      );
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('Create intent failed: ${response.statusCode} ${response.body}');
+      return null;
+    } catch (e) {
+      debugPrint('Create intent error: $e');
+      return null;
+    }
+  }
+
+  Future<Map<String, dynamic>?> confirmMockPayment(String paymentIntentId) async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.post(
+        Uri.parse('$_baseUrl/api/payments/mock-confirm/$paymentIntentId'),
+        headers: _authHeaders,
+      );
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body) as Map<String, dynamic>;
+      }
+      debugPrint('Confirm mock failed: ${response.statusCode} ${response.body}');
+      return null;
+    } catch (e) {
+      debugPrint('Confirm mock error: $e');
+      return null;
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> fetchMyAddresses() async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.get(
+        Uri.parse('$_baseUrl/api/users/me/addresses'),
+        headers: _authHeaders,
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
+        return data.cast<Map<String, dynamic>>();
+      }
+      return [];
+    } catch (e) {
+      debugPrint('Addresses fetch error: $e');
+      return [];
+    }
+  }
 
   Future<List<Map<String, dynamic>>> fetchMyOrders() async {
     try {
