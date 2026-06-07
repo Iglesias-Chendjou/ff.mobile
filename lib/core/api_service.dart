@@ -215,6 +215,47 @@ class ApiService {
     }
   }
 
+  // --- DELIVERIES ---
+
+  Future<Map<String, dynamic>?> fetchDeliveryTrack(String deliveryId) async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.get(
+        Uri.parse('$_baseUrl/api/deliveries/$deliveryId/track'),
+        headers: _authHeaders,
+      );
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body) as Map<String, dynamic>;
+      }
+      return null;
+    } catch (e) {
+      debugPrint('Delivery track fetch error: $e');
+      return null;
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> fetchMyDeliveries() async {
+    try {
+      if (!isAuthenticated) {
+        await login('client@foodfirst.be', 'Client1234!');
+      }
+      final response = await http.get(
+        Uri.parse('$_baseUrl/api/deliveries/mine'),
+        headers: _authHeaders,
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
+        return data.cast<Map<String, dynamic>>();
+      }
+      return [];
+    } catch (e) {
+      debugPrint('Deliveries fetch error: $e');
+      return [];
+    }
+  }
+
   Future<List<Map<String, dynamic>>> fetchMyAddresses() async {
     try {
       if (!isAuthenticated) {

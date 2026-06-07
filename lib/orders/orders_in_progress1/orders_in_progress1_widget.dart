@@ -1,8 +1,10 @@
+import '/core/api_service.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/orders/cancel_order/cancel_order_widget.dart';
+import '/orders/live_tracking/live_tracking_widget.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +91,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                context.pushNamed(MessageWidget.routeName);
+                await _openLiveTracking(context);
               },
               child: Row(
                 mainAxisSize: MainAxisSize.max,
@@ -593,7 +595,7 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
                         onPressed: () async {
                           context.pushNamed(MessageWidget.routeName);
                         },
-                        text: 'Obtenir de l\u0027aide',
+                        text: 'Suivre la livraison',
                         options: FFButtonOptions(
                           width: 100.0,
                           height: 52.0,
@@ -629,6 +631,28 @@ class _OrdersInProgress1WidgetState extends State<OrdersInProgress1Widget> {
             ].addToEnd(SizedBox(height: 15.0)),
           ),
         ),
+      ),
+    );
+  }
+
+  Future<void> _openLiveTracking(BuildContext context) async {
+    final api = ApiService();
+    final orders = await api.fetchMyOrders();
+    if (!context.mounted) return;
+    final candidate = orders.cast<Map<String, dynamic>?>().firstWhere(
+      (o) => o != null && o['deliveryId'] != null,
+      orElse: () => null,
+    );
+    if (candidate == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Aucune livraison en cours.')),
+      );
+      return;
+    }
+    final deliveryId = candidate['deliveryId'] as String;
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LiveTrackingWidget(deliveryId: deliveryId),
       ),
     );
   }
